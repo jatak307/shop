@@ -1,0 +1,14 @@
+---
+tabWidth: 2
+printWidth: 90
+semi: true
+bracketSpacing: true
+useTabs: false
+overrides:
+    - files: "*.component.html"
+      options:
+          parser: "angular"
+    - files: "*.ts"
+      options:
+          singleQuote: true
+          trailingComma: all
