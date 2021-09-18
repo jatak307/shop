@@ -1,0 +1,15 @@
+.header-wrapper {
+  position: relative;
+  background: rgb(247, 248, 250);
+
+  .separator {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 40px;
+    left: 0;
+    background: rgba(213, 215, 219, 0.4);
+  }
+}
+
+

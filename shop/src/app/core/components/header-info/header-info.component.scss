@@ -1,0 +1,189 @@
+:host {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  min-width: 941px;
+  max-width: 1090px;
+  margin: 0 auto;
+  padding: 0 2.2%;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1a1a1a;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 40px;
+
+  .btn {
+    font-size: inherit;
+    background: none;
+    &:hover {
+      color: rgb(245, 63, 154);
+    }
+    &:focus {
+      outline: none !important;
+      box-shadow: none;
+      color: rgb(144, 147, 153);
+    }
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin-right: auto;
+    margin-bottom: 2px;
+    text-align: left;
+    border: 0;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    background: none;
+    transition: color .2s ease;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    color: #000;
+    font-size: 14px;
+    transition: .25s all;
+    &:hover {
+      text-decoration: none;
+      color: rgb(245, 63, 154);
+    }
+  }
+
+  .icon-viber:hover,
+  .btn-location:hover {
+    svg > path {
+      transition: .25s all;
+      fill: rgb(245, 63, 154);
+    }
+  }
+
+  .velcom-phone > a {
+    color: black;
+    cursor: default;
+  }
+
+  &__details,
+  &__contacts  {
+    display: flex;
+    margin-bottom: 2px;
+    font-size: 14px;
+    line-height: 20px;
+    &-elem {
+      margin-right: 12px;
+      padding: 0;
+      .btn {
+        padding: 0;
+      }
+    }
+  }
+
+  &__contacts {
+    position: relative;
+    padding: 0 4px 0 12px;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      height: 16px;
+      margin-top: -8px;
+      border-left: 1px solid rgba(144, 147, 153, 0.3);
+  }
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      padding: .25rem 2rem 0.25rem 0.75rem;
+      font-size: 14px;
+      &:last-child {
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 16px;
+          width: 80%;
+          border-top: 1px solid rgba(0, 0, 0, 0.164);
+          pointer-events: none;
+        }
+        a {
+          margin-left: 31px;
+        }
+      }
+    }
+  }
+
+  &__contacts,
+  &__details {
+    .dropdown-item:hover {
+      background: rgba(245, 63, 154, 0.16);
+      transition: .25s all;
+      a {
+        color: rgb(245, 63, 154);
+        svg{
+          path {
+            fill: rgb(245, 63, 154);
+          }
+        }
+        .icon-call {
+          path {
+            stroke: rgb(245, 63, 154);
+          }
+        }
+        svg > .icon-telegram {
+          fill: #fff;
+          color: rgb(245, 63, 154);
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    .dropdown-item:nth-child(1):hover,
+    .dropdown-item:nth-child(2):hover {
+      background: none;
+    }
+  }
+
+  svg {
+    margin-right: 7px;
+  }
+
+  .icon-telegram {
+    fill: #fff;
+    color: rgb(57, 169, 224);
+  }
+
+  &__working {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 28px;
+    padding-left: 13px;
+    span {
+      min-width: 74px;
+      margin-left: 2px;
+      font-size: 10px;
+      line-height: 14px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 0;
+      display: block;
+      height: 16px;
+      border-left: 1px solid rgba(144, 147, 153, 0.3);
+  }
+  }
+}
+
