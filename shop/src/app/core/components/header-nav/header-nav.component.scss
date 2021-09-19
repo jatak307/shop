@@ -80,25 +80,25 @@
       &-one {
         bottom: .5px;
         right: .5px;
-        animation: catalog-icon 16.8s infinite;
+        animation: catalog-icon-one 17s infinite;
       }
 
       &-two {
         bottom: .5px;
         left: .5px;
-        animation: catalog-icon 16.9s infinite;
+        animation: catalog-icon-two 17s infinite;
       }
 
       &-three {
         top: .5px;
         right: .5px;
-        animation: catalog-icon 17s infinite;
+        animation: catalog-icon-three 17s infinite;
       }
 
       &-four {
         top: .5px;
         left: .5px;
-        animation: catalog-icon 17.1s infinite;
+        animation: catalog-icon-four 17s infinite;
       }
     }
 
@@ -260,11 +260,47 @@
   }
 }
 
-@keyframes catalog-icon {
+@keyframes catalog-icon-one {
   0% {
     opacity: 0;
   }
   2% {
+    opacity: 1;
+  }
+}
+
+@keyframes catalog-icon-two {
+  0% {
+    opacity: 1;
+  }
+  2% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+}
+
+@keyframes catalog-icon-three {
+  0% {
+    opacity: 1;
+  }
+  3% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+}
+
+@keyframes catalog-icon-four {
+  0% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0;
+  }
+  5% {
     opacity: 1;
   }
 }
