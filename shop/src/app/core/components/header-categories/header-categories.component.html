@@ -1,1 +1,9 @@
-<p>header-categories works!</p>
+<div class="categories">
+  <div class="categories__wrapper">
+    <ul class="categories__list" *ngIf="categories$ | async as categories">
+      <li class="categories__item" *ngFor="let category of categories">
+        <a href="#" class="categories__link">{{ category.name }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

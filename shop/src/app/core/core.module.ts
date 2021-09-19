@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
@@ -17,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   imports: [
     SharedModule,
+    HttpClientModule,
   ],
   exports: [HeaderComponent],
 })
