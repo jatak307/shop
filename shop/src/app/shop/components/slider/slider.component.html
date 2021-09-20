@@ -1,1 +1,14 @@
-<p>slider works!</p>
+<ngb-carousel *ngIf="items && items.length > 0" class="slider" [showNavigationArrows]="false">
+  <ng-template ngbSlide  *ngFor="let item of items">
+    <a href="#" class="slider-link">
+      <div class="slider-link-img">
+        <img [src]="item[0].imageUrls[0]" alt="item[0].name">
+      </div>
+      <div class="carousel-caption slider-link-descr">
+        <h3 class="slider-link-descr-h3">{{ item[0].name }}</h3>
+        <p class="slider-link-descr-text">{{ item[0].description }}</p>
+        <p class="slider-link-descr-price">{{ item[0].price }} руб</p>
+      </div>
+    </a>
+  </ng-template>
+</ngb-carousel>

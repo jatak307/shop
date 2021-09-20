@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Category } from '../../models/categories.model';
 import { Product } from '../../models/product.model';
@@ -19,5 +20,10 @@ export class ProductService {
 
   public getProductsByQuery(query: string): Observable<Product[]> {
     return this.http.get<Product[]>(`http://localhost:3004/goods/search?text=${query}`).pipe(res => res);
+  }
+
+  public getProductsForSlider(categoryId : string, subCategoryId: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`http://localhost:3004/goods/category/${categoryId}/${subCategoryId}?start=1&count=1`)
+      .pipe(map(res => res));
   }
 }
