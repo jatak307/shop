@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Product } from '../../../core/models/product.model';
 
@@ -7,10 +7,6 @@ import { Product } from '../../../core/models/product.model';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent {
   @Input() items: Array<Product[]> = [];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

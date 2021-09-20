@@ -9,7 +9,7 @@ import { ProductService } from '../../services/product/product.service';
 @Component({
   selector: 'app-header-nav',
   templateUrl: './header-nav.component.html',
-  styleUrls: ['./header-nav.component.scss']
+  styleUrls: ['./header-nav.component.scss'],
 })
 export class HeaderNavComponent implements OnInit {
   public products$?: Observable<Product[]>;

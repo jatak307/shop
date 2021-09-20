@@ -7,14 +7,7 @@ import { MainComponent } from './pages/main/main.component';
 import { ShopRoutingModule } from './shop-routing/shop-routing.module';
 
 @NgModule({
-  declarations: [
-    SliderComponent,
-    PopularGoodsComponent,
-    MainComponent
-  ],
-  imports: [
-    SharedModule,
-    ShopRoutingModule
-  ]
+  declarations: [SliderComponent, PopularGoodsComponent, MainComponent],
+  imports: [SharedModule, ShopRoutingModule],
 })
-export class ShopModule { }
+export class ShopModule {}
