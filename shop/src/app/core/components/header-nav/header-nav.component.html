@@ -52,7 +52,7 @@
             type="text"
             id="j-search"
             placeholder="Поиск товаров"
-            name="term"
+            name="search"
             class="nav__search-input"
             data-ga_action="change"
             data-ga_on="change"
@@ -64,10 +64,29 @@
             data-lpignore="true"
             value=""
             role="textbox"
+            [(ngModel)]="inputValue"
+            (ngModelChange)="query.next($event)"
           >
           <span class="nav__search-loader"></span>
           <button type="button" class="nav__search-clear">Очистить поиск</button>
-      </fieldset></form>
+      </fieldset>
+
+      <ul class="search" *ngIf="products$ | async as products">
+        <li class="search-item" *ngFor="let prod of products">
+          <a href="#" class="search-link">
+            <span class="search-link-image">
+              <img src="{{ prod.imageUrls[0] }}" alt="{{ prod.name }}">
+            </span>
+            <span class="search-link-descr">
+              <span class="search-link-descr-name">{{ prod.name }}</span>
+              <span class="search-link-descr-price">{{ prod.price }} руб</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </form>
+
+
 
     <button type="button" class="nav__btn">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="">

@@ -13,7 +13,7 @@ import { ProductService } from '../../services/product/product.service';
 export class HeaderCategoriesComponent implements OnInit {
   public categories$?: Observable<Category[]> = this.productService.getCategories()
 
-  constructor(public productService: ProductService) { }
+  constructor(public productService: ProductService) {}
 
   ngOnInit(): void {}
 
