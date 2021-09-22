@@ -23,7 +23,7 @@
       <span class="nav__logotype-text">Онлайн-гипермаркет 21vek.by</span>
     </div>
 
-    <button type="button" class="nav__catalog">
+    <button type="button" class="nav__catalog" (click)="togglePopupMenu()">
       <div class="nav__catalog-wrap">
         <div class="nav__catalog_square">
           <div class="nav__catalog_square-one"></div>
@@ -111,8 +111,8 @@
 
   </nav>
 
-  <div class="catalog-popup" *ngIf="categories$ | async as categories">
-    <div class="categories-container">
+  <div class="catalog-popup" *ngIf="togglePopup | async">
+    <div class="categories-container" *ngIf="categories$ | async as categories">
       <div class="categories-container-left">
         <div class="list-container">
           <div *ngFor="let cat of categories">

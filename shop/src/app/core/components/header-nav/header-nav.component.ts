@@ -23,7 +23,9 @@ export class HeaderNavComponent implements OnInit {
 
   public inputValue: string = '';
 
-  public navGoods: Product[] = [];
+  public togglePopup = new Subject<boolean>();
+
+  private showPopup = false;
 
   constructor(public productService: ProductService) {}
 
@@ -39,5 +41,10 @@ export class HeaderNavComponent implements OnInit {
 
   public showCategory(category: Category) {
     this.category.next(category);
+  }
+
+  public togglePopupMenu() {
+    this.showPopup = !this.showPopup;
+    this.togglePopup.next(this.showPopup);
   }
 }
