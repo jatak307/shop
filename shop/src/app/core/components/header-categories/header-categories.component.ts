@@ -13,5 +13,19 @@ import { ProductService } from '../../services/product/product.service';
 export class HeaderCategoriesComponent {
   public categories$?: Observable<Category[]> = this.productService.getCategories();
 
-  constructor(public productService: ProductService) {}
+  constructor(public productService: ProductService) {
+    productService.getSubCategories().subscribe((res) => {
+      // console.log(res);
+      res.map((obs) => {
+        obs.subscribe((resOb) => {
+          // console.log(resOb);
+        });
+      });
+      // res.subscribe((sub) => {
+      //   console.log(sub);
+      // });
+    });
+
+    this.categories$?.subscribe((res) => console.log(res));
+  }
 }
