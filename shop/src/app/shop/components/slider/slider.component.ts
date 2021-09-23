@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Product } from '../../../core/models/product.model';
 
@@ -9,4 +10,10 @@ import { Product } from '../../../core/models/product.model';
 })
 export class SliderComponent {
   @Input() items: Array<Product[]> = [];
+
+  constructor(private router: Router) {}
+
+  public clickGood(id: string) {
+    this.router.navigate(['/main/detailed/', id]);
+  }
 }

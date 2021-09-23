@@ -1,6 +1,6 @@
 <ngb-carousel *ngIf="items && items.length > 0" class="slider" [showNavigationArrows]="false" [pauseOnHover]="false">
   <ng-template ngbSlide  *ngFor="let item of items">
-    <a href="#" class="slider-link">
+    <div class="slider-link" (click)="clickGood(item[0].id)">
       <div class="slider-link-img">
         <img [src]="item[0].imageUrls[0]" alt="item[0].name">
       </div>
@@ -9,6 +9,6 @@
         <p class="slider-link-descr-text">{{ item[0].description }}</p>
         <p class="slider-link-descr-price">{{ item[0].price }} руб</p>
       </div>
-    </a>
+    </div>
   </ng-template>
 </ngb-carousel>
