@@ -1,4 +1,4 @@
-<ngb-carousel class="popular">
+<ngb-carousel class="popular" [interval]=20000>
   <ng-template ngbSlide *ngFor="let arr of itemsHighRating">
     <div class="popular-container">
       <div class="popular-link" *ngFor="let item of arr" (click)="clickGood(item.id)">

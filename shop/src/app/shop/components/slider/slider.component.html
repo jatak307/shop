@@ -1,4 +1,4 @@
-<ngb-carousel *ngIf="items && items.length > 0" class="slider" [showNavigationArrows]="false">
+<ngb-carousel *ngIf="items && items.length > 0" class="slider" [showNavigationArrows]="false" [pauseOnHover]="false">
   <ng-template ngbSlide  *ngFor="let item of items">
     <a href="#" class="slider-link">
       <div class="slider-link-img">
