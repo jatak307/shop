@@ -1,7 +1,7 @@
 <ngb-carousel class="popular">
   <ng-template ngbSlide *ngFor="let arr of itemsHighRating">
     <div class="popular-container">
-      <a href="#" class="popular-link" *ngFor="let item of arr">
+      <a href="/item.id" class="popular-link" *ngFor="let item of arr">
         <div class="popular-link-img">
           <img *ngIf="item.imageUrls[0]; else plchdr" [src]="item.imageUrls[0]" alt="item[0].name">
         </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
@@ -13,19 +14,9 @@ import { ProductService } from '../../services/product/product.service';
 export class HeaderCategoriesComponent {
   public categories$?: Observable<Category[]> = this.productService.getCategories();
 
-  constructor(public productService: ProductService) {
-    productService.getSubCategories().subscribe((res) => {
-      // console.log(res);
-      res.map((obs) => {
-        obs.subscribe((resOb) => {
-          // console.log(resOb);
-        });
-      });
-      // res.subscribe((sub) => {
-      //   console.log(sub);
-      // });
-    });
+  constructor(public productService: ProductService, private router: Router) {}
 
-    this.categories$?.subscribe((res) => console.log(res));
+  public onClick(id: string) {
+    this.router.navigate(['/main', id]);
   }
 }

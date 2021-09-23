@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -27,7 +28,7 @@ export class HeaderNavComponent implements OnInit {
 
   private showPopup = false;
 
-  constructor(public productService: ProductService) {}
+  constructor(public productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
     this.query.pipe(debounceTime(700), distinctUntilChanged()).subscribe((value) => {
@@ -46,5 +47,17 @@ export class HeaderNavComponent implements OnInit {
   public togglePopupMenu() {
     this.showPopup = !this.showPopup;
     this.togglePopup.next(this.showPopup);
+  }
+
+  public onClickGood(id: string) {
+    this.router.navigate(['/main/detailed/', id]);
+    this.query.next('');
+    this.products$ = undefined;
+    this.inputValue = '';
+  }
+
+  public onClickSubCat(id: string) {
+    this.router.navigate(['/main/', id]);
+    this.togglePopupMenu();
   }
 }
