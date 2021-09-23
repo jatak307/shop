@@ -72,7 +72,7 @@ export class ProductService {
       data.forEach((categ) => {
         categ.subCategories.map((subC) => {
           this.getSubCategory(categ.id, subC.id).subscribe((dataProducts) => {
-            const ar = dataProducts.filter((el) => el.rating === 5);
+            const ar = dataProducts.filter((el) => el.rating >= 4);
             this.allProducts.push(...ar);
           });
         });
