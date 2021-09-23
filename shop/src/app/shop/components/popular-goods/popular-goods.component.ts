@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Product } from 'src/app/core/models/product.model';
 
@@ -9,4 +10,10 @@ import { Product } from 'src/app/core/models/product.model';
 })
 export class PopularGoodsComponent {
   @Input() itemsHighRating: Product[][] | null = [];
+
+  constructor(private router: Router) {}
+
+  public clickGood(id: string) {
+    this.router.navigate(['/main/detailed/', id]);
+  }
 }

@@ -1,7 +1,7 @@
 <ngb-carousel class="popular">
   <ng-template ngbSlide *ngFor="let arr of itemsHighRating">
     <div class="popular-container">
-      <a href="/item.id" class="popular-link" *ngFor="let item of arr">
+      <div class="popular-link" *ngFor="let item of arr" (click)="clickGood(item.id)">
         <div class="popular-link-img">
           <img *ngIf="item.imageUrls[0]; else plchdr" [src]="item.imageUrls[0]" alt="item[0].name">
         </div>
@@ -10,7 +10,7 @@
           <ngb-rating [rate]="item.rating" [readonly]="true" [max]="5"></ngb-rating>
           <p class="popular-link-descr-price">{{ item.price }} руб</p>
         </div>
-      </a>
+      </div>
     </div>
   </ng-template>
 </ngb-carousel>

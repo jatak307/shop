@@ -49,6 +49,10 @@ export class HeaderNavComponent implements OnInit {
     this.togglePopup.next(this.showPopup);
   }
 
+  public clickMain() {
+    this.router.navigate(['/main']);
+  }
+
   public onClickGood(id: string) {
     this.router.navigate(['/main/detailed/', id]);
     this.query.next('');
