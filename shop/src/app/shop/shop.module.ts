@@ -12,7 +12,16 @@ import { GoodsItemComponent } from './components/goods-item/goods-item.component
 import { DetailedInfoComponent } from './components/detailed-info/detailed-info.component';
 
 @NgModule({
-  declarations: [SliderComponent, PopularGoodsComponent, MainComponent, CategoryComponent, DetailedPageComponent, GoodsListComponent, GoodsItemComponent, DetailedInfoComponent],
+  declarations: [
+    SliderComponent,
+    PopularGoodsComponent,
+    MainComponent,
+    CategoryComponent,
+    DetailedPageComponent,
+    GoodsListComponent,
+    GoodsItemComponent,
+    DetailedInfoComponent,
+  ],
   imports: [SharedModule, ShopRoutingModule],
 })
 export class ShopModule {}
