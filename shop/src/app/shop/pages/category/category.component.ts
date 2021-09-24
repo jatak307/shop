@@ -24,6 +24,5 @@ export class CategoryComponent implements OnInit {
         this.subCategory$.next(res);
       });
     });
-    this.subCategory$.subscribe((r) => console.log(r));
   }
 }
