@@ -12,6 +12,10 @@ import { Product } from '../../models/product.model';
   providedIn: 'root',
 })
 export class ProductService {
+  // public actualCategoryId: string = '';
+
+  // public actualSubCategoryId: string = '';
+
   private allProducts: Product[] = [];
 
   constructor(private http: HttpClient) {}

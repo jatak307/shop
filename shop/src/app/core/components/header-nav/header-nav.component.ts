@@ -61,7 +61,13 @@ export class HeaderNavComponent implements OnInit {
   }
 
   public onClickSubCat(id: string) {
-    this.router.navigate(['/main/', id]);
+    this.productService.getCategories().subscribe((cats) => {
+      const cata = cats.filter((cat) => {
+        const findCat = cat.subCategories.filter((sub) => sub.id === id);
+        return findCat.length >= 1;
+      });
+      this.router.navigate(['/main/', cata[0].id, id]);
+    });
     this.togglePopupMenu();
   }
 }

@@ -17,6 +17,13 @@ export class HeaderCategoriesComponent {
   constructor(public productService: ProductService, private router: Router) {}
 
   public onClick(id: string) {
+    this.productService.getCategories().subscribe((cats) => {
+      const cata = cats.filter((cat) => {
+        const findCat = cat.subCategories.filter((sub) => sub.id === id);
+        return findCat.length >= 1;
+      });
+      this.router.navigate(['/main/', cata[0].id, id]);
+    });
     this.router.navigate(['/main', id]);
   }
 }

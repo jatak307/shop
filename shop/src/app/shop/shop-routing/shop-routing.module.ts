@@ -7,7 +7,7 @@ import { MainComponent } from '../pages/main/main.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: ':categId', component: CategoryComponent },
+  { path: ':categId/:subCategId', component: CategoryComponent },
   { path: 'detailed/:itemId', component: DetailedPageComponent },
 ];
 
