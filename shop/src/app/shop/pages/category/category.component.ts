@@ -13,15 +13,6 @@ import { ProductService } from 'src/app/core/services/product/product.service';
 export class CategoryComponent implements OnInit {
   public subCategory$ = new Subject<Product[]>();
 
-  private catLocStor = localStorage.getItem('actualCategory');
-
-  private subCatLocStor = localStorage.getItem('actualSubCategory');
-
-  private catId = this.productService.actualCategory?.id || this.catLocStor || undefined;
-
-  private subCatId =
-    this.productService.actualSubCategoryId?.id || this.subCatLocStor || undefined;
-
   constructor(
     private activateRoute: ActivatedRoute,
     private productService: ProductService,
@@ -29,7 +20,6 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.activateRoute.params.subscribe((par) => {
-      console.log('params', par);
       this.productService.getSubCategory(par.categId, par.subCategId).subscribe((res) => {
         this.subCategory$.next(res);
       });

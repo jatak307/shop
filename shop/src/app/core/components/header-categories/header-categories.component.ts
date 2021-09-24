@@ -26,7 +26,6 @@ export class HeaderCategoriesComponent {
         return findCat.length >= 1;
       });
       [this.productService.actualCategory] = cata;
-      console.log('передается в роутер:', cata[0], id);
 
       this.router.navigate(['/main/', cata[0].id, id]);
     });
