@@ -8,7 +8,7 @@ import { MainComponent } from '../pages/main/main.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: ':categId/:subCategId', component: CategoryComponent },
-  { path: 'detailed/:itemId', component: DetailedPageComponent },
+  { path: ':itemId', component: DetailedPageComponent },
 ];
 
 @NgModule({

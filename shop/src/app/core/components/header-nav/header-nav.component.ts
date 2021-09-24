@@ -6,6 +6,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 import { Category } from '../../models/categories.model';
 import { Product } from '../../models/product.model';
+import { SubCategory } from '../../models/subcategory';
 import { ProductService } from '../../services/product/product.service';
 
 @Component({
@@ -61,13 +62,26 @@ export class HeaderNavComponent implements OnInit {
   }
 
   public onClickSubCat(id: string) {
+    this.clearParams();
     this.productService.getCategories().subscribe((cats) => {
-      const cata = cats.filter((cat) => {
-        const findCat = cat.subCategories.filter((sub) => sub.id === id);
+      const cata = cats.filter((cat: Category) => {
+        const findCat: SubCategory[] = cat.subCategories.filter((sub) => sub.id === id);
+        if (findCat.length >= 1) this.setParams(cat, findCat[0]);
         return findCat.length >= 1;
       });
-      this.router.navigate(['/main/', cata[0].id, id]);
+      [this.productService.actualCategory] = cata;
+      this.router.navigate(['/main/', cata[0], id]);
     });
     this.togglePopupMenu();
+  }
+
+  private setParams(cat: Category, subcat: SubCategory) {
+    this.productService.actualSubCategoryId = subcat;
+    this.productService.actualCategory = cat;
+  }
+
+  private clearParams() {
+    this.productService.actualSubCategoryId = undefined;
+    this.productService.actualCategory = undefined;
   }
 }

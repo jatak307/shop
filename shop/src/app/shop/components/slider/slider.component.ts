@@ -16,6 +16,6 @@ export class SliderComponent {
   constructor(private router: Router, private productService: ProductService) {}
 
   public clickGood(id: string) {
-    this.router.navigate(['/main/detailed/', id]);
+    this.router.navigate(['/main/', id]);
   }
 }

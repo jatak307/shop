@@ -7,14 +7,15 @@ import { switchMap } from 'rxjs/operators';
 
 import { Category } from '../../models/categories.model';
 import { Product } from '../../models/product.model';
+import { SubCategory } from '../../models/subcategory';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  // public actualCategoryId: string = '';
+  public actualCategory?: Category;
 
-  // public actualSubCategoryId: string = '';
+  public actualSubCategoryId?: SubCategory;
 
   private allProducts: Product[] = [];
 
