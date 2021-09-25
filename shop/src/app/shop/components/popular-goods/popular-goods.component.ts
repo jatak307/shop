@@ -14,6 +14,6 @@ export class PopularGoodsComponent {
   constructor(private router: Router) {}
 
   public clickGood(id: string) {
-    this.router.navigate(['/main/detailed/', id]);
+    this.router.navigate(['/main/', id]);
   }
 }

@@ -55,7 +55,7 @@ export class HeaderNavComponent implements OnInit {
   }
 
   public onClickGood(id: string) {
-    this.router.navigate(['/main/detailed/', id]);
+    this.router.navigate(['/main/', id]);
     this.query.next('');
     this.products$ = undefined;
     this.inputValue = '';

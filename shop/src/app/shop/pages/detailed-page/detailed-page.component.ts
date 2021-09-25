@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Subject } from 'rxjs';
@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/core/services/product/product.service';
   templateUrl: './detailed-page.component.html',
   styleUrls: ['./detailed-page.component.scss'],
 })
-export class DetailedPageComponent {
+export class DetailedPageComponent implements OnInit {
   public product$ = new Subject<Product>();
 
   constructor(
