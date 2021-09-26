@@ -1,0 +1,22 @@
+<div *ngIf="selectedProduct">
+  <div class="card" [appBorderColor]="selectedProduct.availableAmount">
+    <div class="card-img">
+      <img *ngIf="selectedProduct.imageUrls[0]; else plchdr" [src]="selectedProduct.imageUrls[0]" [alt]="selectedProduct.name">
+    </div>
+    <div class="card-body">
+      <a routerLink="/main/{{selectedProduct.id}}" class="card-title">{{ selectedProduct.name }}</a>
+      <div class="card-price">
+        <ngb-rating [rate]="selectedProduct.rating" [readonly]="true" [max]="5"></ngb-rating>
+        <span>{{ selectedProduct.price }} руб.</span>
+      </div>
+      <div class="card-btn-wrapper">
+        <button class="btn btn-secondary" [disabled]="isFavorite" (click)="addInFavorite()">В избранное</button>
+        <button class="btn btn-danger" [disabled]="inBasket" (click)="addToBasket()">В корзину</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #plchdr>
+  <img src="https://via.placeholder.com/250x200" alt="placeholder">
+</ng-template>

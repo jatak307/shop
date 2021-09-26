@@ -3,7 +3,7 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
-*, ul {
+*, ul, p, ol {
   margin: 0;
   padding: 0;
   box-sizing: border-box;

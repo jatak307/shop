@@ -1,0 +1,134 @@
+.footer {
+  background-color: rgb(247, 248, 250);
+  &-inner {
+    padding: 32px 2.2%;
+    min-height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    &-box {
+      width: 86%;
+      max-width: 1090px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.contacts-block {
+  margin-top: 20px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(213, 215, 219, 0.5);
+  padding-top: 12px;
+  text-align: center;
+  &-inner {
+    margin: 0 auto;
+    max-width: 950px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    white-space: nowrap;
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: Arial,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(26, 26, 26);
+    font-size: 14px;
+    line-height: 24px;
+    padding-left: 26px;
+    border: 0;
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-color: initial;
+    transition: 0.2s all;
+    &:hover {
+      color: rgb(245, 63, 154);
+      svg{
+        path {
+          fill: rgb(245, 63, 154);
+        }
+      }
+      .icon-call {
+        path {
+          stroke: rgb(245, 63, 154);
+        }
+      }
+      svg > .icon-telegram {
+        fill: #fff;
+        color: rgb(245, 63, 154);
+      }
+    }
+  }
+}
+
+.social-block {
+  margin-top: 12px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(213, 215, 219, 0.5);
+  padding-top: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  &-item {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(23, 35, 38, 0.05);
+    margin: 0 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    transition: all .2s ease-out;
+  }
+}
+
+.vk:hover {
+  background-color: #447dbd;
+  svg > path {
+    fill: #fff;
+  }
+}
+
+.facebook:hover {
+  background-color: #446db0;
+  svg > path {
+    fill: #fff;
+  }
+}
+
+.instagram:hover {
+  background: linear-gradient(#fa91196e, #9744b073);
+}
+
+.youtube:hover {
+  background-color: #ff2638;
+  svg > path {
+    fill: #fff;
+  }
+}
+
+.ok:hover {
+  background-color: #fa9019;
+  svg > path {
+    fill: #fff;
+  }
+}
+
+@media screen and (max-device-width:1024px), screen and (max-width:1024px) {
+  .contacts-block {
+    margin-top: 20px;
+    padding: 0;
+    &-inner {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+    }
+    &-item {
+      padding-top: 12px;
+    }
+  }
+}

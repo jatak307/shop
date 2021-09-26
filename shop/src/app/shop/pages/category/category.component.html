@@ -1,0 +1,3 @@
+<div class="category" *ngIf="subCategory$ | async as cat">
+  <app-goods-list [products]="cat"></app-goods-list>
+</div>

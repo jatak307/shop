@@ -1,1 +1,20 @@
-<p>popular-goods works!</p>
+<ngb-carousel class="popular" [interval]=20000>
+  <ng-template ngbSlide *ngFor="let arr of itemsHighRating">
+    <div class="popular-container">
+      <div class="popular-link" *ngFor="let item of arr" (click)="clickGood(item.id)">
+        <div class="popular-link-img">
+          <img *ngIf="item.imageUrls[0]; else plchdr" [src]="item.imageUrls[0]" alt="item[0].name">
+        </div>
+        <div class="carousel-caption popular-link-descr">
+          <p class="popular-link-descr-h3">{{ item.name }}</p>
+          <ngb-rating [rate]="item.rating" [readonly]="true" [max]="5"></ngb-rating>
+          <p class="popular-link-descr-price">{{ item.price }} руб</p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<ng-template #plchdr>
+  <img src="https://via.placeholder.com/250x200" alt="placeholder">
+</ng-template>

@@ -8,7 +8,8 @@
 
   &__wrapper {
     width: 100%;
-    min-width: 941px;
+    // min-width: 941px;
+    min-width: 86%;
     max-width: 1090px;
     margin: 0 auto;
     display: flex;
@@ -68,5 +69,6 @@
     color: #fff;
     transition: .2s ease;
     white-space: nowrap;
+    cursor: pointer;
   }
 }
