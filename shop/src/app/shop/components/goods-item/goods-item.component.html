@@ -1,3 +1,22 @@
 <div *ngIf="selectedProduct">
-  {{ selectedProduct.name }}
+  <div class="card">
+    <div class="card-img">
+      <img *ngIf="selectedProduct.imageUrls[0]; else plchdr" [src]="selectedProduct.imageUrls[0]" [alt]="selectedProduct.name">
+    </div>
+    <div class="card-body">
+      <a routerLink="/main/{{selectedProduct.id}}" class="card-title">{{ selectedProduct.name }}</a>
+      <div class="card-price">
+        <ngb-rating [rate]="selectedProduct.rating" [readonly]="true" [max]="5"></ngb-rating>
+        <span>{{ selectedProduct.price }} руб.</span>
+      </div>
+      <div class="card-btn-wrapper">
+        <button class="btn btn-secondary">В избранное</button>
+        <button class="btn btn-danger">В корзину</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+<ng-template #plchdr>
+  <img src="https://via.placeholder.com/250x200" alt="placeholder">
+</ng-template>

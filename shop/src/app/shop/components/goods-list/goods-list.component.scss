@@ -1,0 +1,13 @@
+:host {
+  width: 100%;
+}
+
+.results-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
