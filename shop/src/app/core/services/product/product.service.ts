@@ -15,7 +15,7 @@ import { SubCategory } from '../../models/subcategory';
 export class ProductService {
   public actualCategory?: Category;
 
-  public actualSubCategoryId?: SubCategory;
+  public actualSubCategory?: SubCategory;
 
   private allProducts: Product[] = [];
 

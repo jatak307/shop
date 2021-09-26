@@ -1,3 +1,18 @@
-<div class="product" *ngIf="product">
-  {{ product |json }}
+<div class="product-wrapper" *ngIf="product">
+  <ul class="breadcrumbs">
+    <li class="breadcrumbs-item">
+      <a routerLink="/main" class="breadcrumbs-link">Главная</a>
+    </li>
+    <li class="breadcrumbs-item"  *ngIf="category$ | async as cat">
+      <span class="breadcrumbs-nolink" class="breadcrumbs-link-span">{{ cat.name }}</span>
+    </li>
+    <li class="breadcrumbs-item" *ngIf="sub$ | async as sub">
+      <span class="breadcrumbs-link" (click)="onClick(sub.id)">{{ sub.name }}</span>
+    </li>
+  </ul>
+  <div class="div">{{ product.name }}</div>
+  <div class="div">{{ product.imageUrls }}</div>
+  <div class="div">{{ product.price }}</div>
+  <div class="div">{{ product.rating }}</div>
+  <div class="div">{{ product.description }}</div>
 </div>

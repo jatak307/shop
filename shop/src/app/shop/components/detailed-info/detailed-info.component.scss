@@ -1,0 +1,38 @@
+.product-wrapper {
+    min-width: 80%;
+    max-width: 1140px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.breadcrumbs {
+  clear: both;
+  display: inline-block;
+  list-style-type: none;
+  &-item {
+    display: inline-block;
+    padding: 0 .5em 0 .75em;
+    background: url('https://www.21vek.by/img/breadcrumbs_separator.gif') no-repeat 0 80%;
+    line-height: 1;
+    &:first-child {
+      padding-left: 0;
+      background: none;
+    }
+  }
+  &-link  {
+    font-size: 11px;
+    color: #717171;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      color: #BC1242;
+      text-shadow: none;
+    }
+    &-span {
+      font-size: 11px;
+      color: #717171;
+      text-decoration: underline;
+      cursor: default;
+    }
+  }
+}

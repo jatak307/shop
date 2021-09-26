@@ -32,12 +32,12 @@ export class HeaderCategoriesComponent {
   }
 
   private setParams(cat: Category, subcat: SubCategory) {
-    this.productService.actualSubCategoryId = subcat;
+    this.productService.actualSubCategory = subcat;
     this.productService.actualCategory = cat;
   }
 
   private clearParams() {
-    this.productService.actualSubCategoryId = undefined;
+    this.productService.actualSubCategory = undefined;
     this.productService.actualCategory = undefined;
   }
 }

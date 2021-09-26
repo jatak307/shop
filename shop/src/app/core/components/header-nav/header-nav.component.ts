@@ -70,18 +70,18 @@ export class HeaderNavComponent implements OnInit {
         return findCat.length >= 1;
       });
       [this.productService.actualCategory] = cata;
-      this.router.navigate(['/main/', cata[0], id]);
+      this.router.navigate(['/main/', cata[0].id, id]);
     });
     this.togglePopupMenu();
   }
 
   private setParams(cat: Category, subcat: SubCategory) {
-    this.productService.actualSubCategoryId = subcat;
+    this.productService.actualSubCategory = subcat;
     this.productService.actualCategory = cat;
   }
 
   private clearParams() {
-    this.productService.actualSubCategoryId = undefined;
+    this.productService.actualSubCategory = undefined;
     this.productService.actualCategory = undefined;
   }
 }
