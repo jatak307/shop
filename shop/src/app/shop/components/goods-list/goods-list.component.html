@@ -1,7 +1,28 @@
-<div class="results-list">
+<div class="category-wrapper">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/main" class="breadcrumb-link">Главная</a>
+      </li>
+      <li class="breadcrumb-item" *ngIf="category$ | async as cat">
+        <span>{{ cat.name }}</span>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page"  *ngIf="sub$ | async as sub">
+        <span class="breadcrumb-item-active">{{ sub.name }}</span>
+      </li>
+    </ol>
+  </nav>
+
+  <h1 class="category-header" *ngIf="sub$ | async as sub">{{ sub.name }}</h1>
+
+  <div class="results-list">
     <app-goods-item
-    *ngFor="let product of products "
-    [selectedProduct]="product"
-  ></app-goods-item>
+      *ngFor="let product of products "
+      [selectedProduct]="product"
+    ></app-goods-item>
+  </div>
 </div>
+
+
+
 

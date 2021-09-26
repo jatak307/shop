@@ -4,7 +4,7 @@
       <a routerLink="/main" class="breadcrumbs-link">Главная</a>
     </li>
     <li class="breadcrumbs-item"  *ngIf="category$ | async as cat">
-      <span class="breadcrumbs-nolink" class="breadcrumbs-link-span">{{ cat.name }}</span>
+      <span class="breadcrumbs-link-span">{{ cat.name }}</span>
     </li>
     <li class="breadcrumbs-item" *ngIf="sub$ | async as sub">
       <span class="breadcrumbs-link" (click)="onClick(sub.id)">{{ sub.name }}</span>
