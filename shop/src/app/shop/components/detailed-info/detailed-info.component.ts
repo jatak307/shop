@@ -21,6 +21,10 @@ export class DetailedInfoComponent implements OnInit, OnDestroy {
 
   public catId = '';
 
+  public isFavorite = false;
+
+  public inBasket = false;
+
   constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
@@ -45,6 +49,14 @@ export class DetailedInfoComponent implements OnInit, OnDestroy {
 
   public onClick(subId: string) {
     this.router.navigate(['/main/', this.catId, subId]);
+  }
+
+  public addInFavorite() {
+    this.isFavorite = true;
+  }
+
+  public addToBasket() {
+    this.inBasket = true;
   }
 
   ngOnDestroy(): void {

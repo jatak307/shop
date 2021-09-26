@@ -25,8 +25,21 @@
         </div>
       </ng-template>
     </ngb-carousel>
+
+    <div class="product-interaction-wrapper">
+      <div class="product-interaction-price">{{ product.price }} руб.</div>
+      <div class="product-interaction-rating">
+        <ngb-rating [rate]="product.rating" [readonly]="true" [max]="5"></ngb-rating>
+      </div>
+      <div class="product-interaction-quantity">В наличии {{ product.availableAmount }} шт.</div>
+      <button class="btn btn-secondary" [disabled]="isFavorite" (click)="addInFavorite()">В избранное</button>
+      <button class="btn btn-danger" [disabled]="inBasket" (click)="addToBasket()">В корзину</button>
+    </div>
   </div>
 
-  <div class="div">{{ product.price }} рублей</div>
-  <div class="div">{{ product.description }}</div>
+
+  <div class="product-description">
+    <h3>Описание</h3>
+    <div class="product-description-text">{{ product.description }}</div>
+  </div>
 </div>

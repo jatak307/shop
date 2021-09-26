@@ -40,13 +40,36 @@
 
 .content {
   &__header {
+    padding: 0.75rem 1rem;
     clear: both;
-    padding: 18px 0 4px;
+    margin-bottom: 1rem;
     font-size: 30px;
     font-family: 'FuturaDemi', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
-    line-height: 1;
-    vertical-align: baseline;
+  }
+}
+
+.product-interaction {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  &-wrapper {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px 40px;
+    button {
+      width: 110px;
+      font-size: 14px;
+    }
+  }
+  &-price {
+    font-size: 30px;
+    line-height: 39px;
   }
 }
 
@@ -57,7 +80,6 @@
   margin: 24px 0;
   box-shadow: rgb(0 0 0 / 20%) 0 0 8px;
   background: rgba(148, 148, 148, 0.267);
-  // background: linear-gradient(45deg, #941e94, rgba(216, 121, 195, 0.397) 46%, #e52e6b);
   border-radius: 5px;
   &-link {
     display: flex;
@@ -87,4 +109,8 @@
       object-fit: scale-down;
     }
   }
+}
+
+.product-description {
+  margin: 4rem 0;
 }
