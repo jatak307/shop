@@ -1,5 +1,5 @@
 <div *ngIf="selectedProduct">
-  <div class="card">
+  <div class="card" [appBorderColor]="selectedProduct.availableAmount">
     <div class="card-img">
       <img *ngIf="selectedProduct.imageUrls[0]; else plchdr" [src]="selectedProduct.imageUrls[0]" [alt]="selectedProduct.name">
     </div>

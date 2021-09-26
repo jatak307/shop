@@ -10,6 +10,7 @@ import { DetailedPageComponent } from './pages/detailed-page/detailed-page.compo
 import { GoodsListComponent } from './components/goods-list/goods-list.component';
 import { GoodsItemComponent } from './components/goods-item/goods-item.component';
 import { DetailedInfoComponent } from './components/detailed-info/detailed-info.component';
+import { BorderColorDirective } from './directives/border-color.directive';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DetailedInfoComponent } from './components/detailed-info/detailed-info.
     GoodsListComponent,
     GoodsItemComponent,
     DetailedInfoComponent,
+    BorderColorDirective,
   ],
   imports: [SharedModule, ShopRoutingModule],
 })

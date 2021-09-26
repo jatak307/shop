@@ -1,11 +1,13 @@
 .card {
   height: 350px;
   width: 20vw;
+  min-width: 220px;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 10px;
+  border-bottom: #EB5757 solid 5px;
   &-img {
     display: flex;
     align-items: center;
