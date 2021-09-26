@@ -10,9 +10,23 @@
       <span class="breadcrumbs-link" (click)="onClick(sub.id)">{{ sub.name }}</span>
     </li>
   </ul>
-  <div class="div">{{ product.name }}</div>
-  <div class="div">{{ product.imageUrls }}</div>
-  <div class="div">{{ product.price }}</div>
-  <div class="div">{{ product.rating }}</div>
+
+  <div class="content">
+    <div class="content__header">{{ product.name }}</div>
+  </div>
+
+  <div class="product-interaction">
+    <ngb-carousel class="product-slider">
+      <ng-template ngbSlide  *ngFor="let item of product.imageUrls">
+        <div class="product-slider-link">
+          <div class="product-slider-link-img">
+            <img [src]="item" alt="product image">
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+
+  <div class="div">{{ product.price }} рублей</div>
   <div class="div">{{ product.description }}</div>
 </div>

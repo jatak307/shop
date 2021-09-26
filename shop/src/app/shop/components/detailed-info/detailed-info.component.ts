@@ -21,9 +21,19 @@ export class DetailedInfoComponent implements OnInit, OnDestroy {
 
   public catId = '';
 
+  public images?: string[] = [];
+
+  public images$ = new Subject<string[]>();
+
   constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
+    this.images = this.product?.imageUrls[0].split(',');
+
+    this.images$.next(this.product?.imageUrls[0].split(','));
+
+    this.images$.subscribe((ims) => console.log(ims));
+
     this.productService.getCategories().subscribe((cats) => {
       cats.forEach((cat: Category) => {
         cat.subCategories.forEach((sub) => {
