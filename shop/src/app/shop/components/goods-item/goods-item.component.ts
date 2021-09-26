@@ -9,4 +9,16 @@ import { Product } from 'src/app/core/models/product.model';
 })
 export class GoodsItemComponent {
   @Input() selectedProduct?: Product;
+
+  public isFavorite = false;
+
+  public inBasket = false;
+
+  public addInFavorite() {
+    this.isFavorite = true;
+  }
+
+  public addToBasket() {
+    this.inBasket = true;
+  }
 }
